@@ -4,6 +4,31 @@
 
 PixMix is a probing attack on DVP interface that can menupulate image pixels in electrical signal level before it is decoded to image for further processing. This work is a comprehensive investigation of the potential of advarsarial attacks on AI software where advarsarial menupulation comes from the hardware instead of software. This work is a part of my Master's Thesis.
 
+
+## Project File Structure
+```
+PixMix-DVP-Bus-poisoning/
+├── Attacker/
+│   ├── Grids/
+│   ├── Horizontal-Lines/
+│   └── Vertical-Lines/
+|
+├── Victim/
+│   └── ESP32cam-Video-Streaming-over-HTTP-Firmware/
+|
+├── Image_Receiver_Client/
+│   └── server_decode.ipynb 
+|
+├── Assets/
+└── README.md
+```
+
+- `Attacker/`: Attack Firmware to inject lines and patterns into the image on the bus.
+- `Victim/`: Firmware for the ESP32-CAM system streaming video.
+- `Image_Receiver_Client/`: Scripts for receiving and decoding images from the camera stream.
+
+
+## Experimental Setup
 Experiments were conducted on ESP32-CAM as Target and an ESP32 as attacker. The system architecture is provided below.
 ![System Architecture](./Assets/System-Arch.png)
 
@@ -43,4 +68,5 @@ The signal lines were probed from soldered extension thin wires.
   note         = {OhioLINK Electronic Theses and Dissertations Center}
 }
 ```
+
 
